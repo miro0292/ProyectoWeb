@@ -1,0 +1,74 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<title></title>
+			<link href="bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
+		      <script src="bootstrap-4.0.0/js/popper.min.js" type="text/javascript"></script>
+		        <script src="bootstrap-4.0.0/js/holder.min.js" type="text/javascript"></script>
+		      <script src="bootstrap-4.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+
+		      <!-- Custom styles for this template -->
+		      <link href="signin.css" rel="stylesheet">
+		</head>
+		<body>
+			<form>
+				<input id="n1" type="Number" name="" class="form-control">
+				<select id="op">
+					<option value="1">+</option>
+					<option value="2">-</option>
+					<option value="3">*</option>
+					<option value="4">/</option>
+					<option value="5">^</option>
+				</select>
+				<input id= "n2" type="Number" name="" class="form-control ">
+				<input type="submit" name="" onclick="operacion()">
+				
+			</form>
+
+		<script type="text/javascript">
+		function operacion(){
+			try{
+				var n1=document.getElementById("n1");
+				var n2=document.getElementById("n2");
+				var op=document.getElementById("op");
+				/*if(!Number.isInteger(n1.value) && !Number.isInteger(n2.value))
+				{
+					alert("numeros no validos");
+					return false;
+				}*/
+			switch(op.options[op.selectedIndex].value){
+				case "1":
+					//alert("resultado: "+ (Number(n1.value)()+n2.value()));
+					//alert("hola"+Number(n1.value)());
+					//var res=Number(Number(n1.value))+Number(Number(n2.value);
+					alert("resultado: "+ (Number(n1.value)+Number(n2.value)));
+					//document.getElementById("lbl").value=(Number(n1.value)+Number(n2.value));
+				break;
+				case "2":
+					alert("resultado: "+ (Number(n1.value)-Number(n2.value)));
+				break;
+				case "3":
+					alert("resultado: "+ (Number(n1.value)*Number(n2.value)));
+				break;
+				case "4":
+					if(n2.value != "0"){
+						alert("resultado: "+ (Number(n1.value)/Number(n2.value)));
+					}
+					else
+						alert("Division no puee ser 0");
+				break;
+				case "5":
+				alert("resultado: "+ Math.pow(Number(n1.value),Number(n2.value)));
+				break;
+				return false;
+				}
+			}
+			catch(error){
+				alert("numeros no validos");
+			}
+			
+			
+		}
+		</script>
+		</body>
+		</html>
